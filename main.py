@@ -2,7 +2,27 @@ import subprocess
 import os
 import textwrap
 
+# box_chars = [
+#     '\u2500',  # ─
+#     '\u2502',  # │
+#     '\u250C',  # ┌
+#     '\u2510',  # ┐
+#     '\u2514',  # └
+#     '\u2518',  # ┘
+#     '\u251C',  # ├
+#     '\u2524',  # ┤
+#     '\u252C',  # ┬
+#     '\u2534',  # ┴
+#     '\u253C',  # ┼
+#     '\u2588',  # █
+# ]
 
+# for char in box_chars:
+#     print(char, end=' ')
+# print()
+
+def clear_term():
+    os.system('clear')
     
 
 def get_terminal_size(): 
@@ -20,6 +40,7 @@ def draw_box(rows, columns):
 
 
 def main():
+    clear_term()
     rows, columns = get_terminal_size()
     draw_box(rows, columns)
     print(str(rows) + " " + str(columns))
@@ -28,3 +49,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
